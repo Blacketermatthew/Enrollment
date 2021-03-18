@@ -4,3 +4,4 @@ venv/
 
 # File types to ignore
 *.pyc
+*.json
