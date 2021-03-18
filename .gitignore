@@ -1,0 +1,6 @@
+
+# Folders to ignore
+venv/
+
+# File types to ignore
+*.pyc
