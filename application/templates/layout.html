@@ -10,14 +10,22 @@
 <body>
 
 <div class="container-fluid text-center top-container">
-    <img src="{{ url_for('static',filename='/images/uta-logo-200.png')}}">
+    <img src="{{ url_for('static',filename='images/uta-logo-200.png')}}">
 </div>
 <div class="container">
-    
     {% include "includes/nav.html" %}
 
-    {% block content %}
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                <div class="alert alert-{{category}}">
+                    <p>{{ message }}</p>
+                </div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
 
+    {% block content %}
     {% endblock %}
 
 </div>

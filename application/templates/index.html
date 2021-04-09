@@ -5,11 +5,19 @@
         <div class="col-md-12 text-center">
             <h1>Welcome to Universal Tech Academy.</h1>
             
-            {% if login %}
-            <h3>Let's get started.</h3>
+            {% if session['username'] %}
+                <h3>Let's get started.</h3>
             {% else %}
-            <p>Already registered? <a href="{{url_for('login') }}">Login</a></p>
+                <p>Already registered? <a href="{{url_for('login') }}">Login</a></p>
             {% endif %}
+
+            <div style="text-align:left;">
+                <h2>Random paragraphs</h2>
+
+                <p>This is some random text to pad out the main page.</p>
+                <p>College good</p>
+                <p>College very good</p>
+            </div>
 
         </div>
     </div>
